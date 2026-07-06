@@ -28,19 +28,27 @@ public class JwtFilter extends OncePerRequestFilter {
         System.out.println("JWT Filter: " + request.getServletPath());
         String path = request.getServletPath();
 
-        if (path.startsWith("/auth")) {
-            chain.doFilter(request, response);
-            return;
-        }
+        if (path.startsWith("/auth")
+        || path.startsWith("/users")
+        || path.startsWith("/products")) {
+    chain.doFilter(request, response);
+    return;
+}
 
         String authHeader= request.getHeader("Authorization");
         String token = null;
         String username = null;
 
-        if (authHeader != null && authHeader.startsWith("Bearer ")){
-            token = authHeader.substring(7);
-            username = jwtUtil.extractUsername(token);
-        }
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+    token = authHeader.substring(7);
+
+    try {
+        username = jwtUtil.extractUsername(token);
+    } catch (io.jsonwebtoken.ExpiredJwtException e) {
+        chain.doFilter(request, response);
+        return;
+    }
+}
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication()==null){
             var userDetails = userDetailsService.loadUserByUsername(username);
