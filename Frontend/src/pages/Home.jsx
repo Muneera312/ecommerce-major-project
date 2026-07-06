@@ -13,7 +13,7 @@ function Home() {
 
       <div className="container mt-4">
        
-           <Categories />
+          
 
       </div>
     
