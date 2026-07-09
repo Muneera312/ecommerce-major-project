@@ -4,8 +4,9 @@ import Categories from "../components/Categories";
 import { Link } from "react-router-dom";
 import HeroBanner from "../components/HeroBanner";
 import FeaturedProducts from "../components/FeaturedProducts";
-
+import { useState } from "react";
 function Home() {
+  const [selectedCategory, setSelectedCategory] = useState("");
   return (
     <>
      
@@ -13,11 +14,11 @@ function Home() {
 
       <div className="container mt-4">
        
-          
+          <Categories selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}  />
 
       </div>
     
-      <FeaturedProducts />
+      <FeaturedProducts selectedCategory={selectedCategory} />
        <Footer />
     </>
   );

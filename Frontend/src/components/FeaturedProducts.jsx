@@ -9,12 +9,20 @@ function FeaturedProducts() {
     useEffect(() => {
         getAllProducts()
             .then((response) => {
-                setProducts(response.data.slice(0, 4)); 
+                setProducts(response.data); 
             })
             .catch((error) => {
                 console.error(error);
             });
     }, []);
+    const filteredProducts =
+        selectedCategory === ""
+            ? products.slice(0, 4)
+            : products
+                  .filter(
+                      (product) => product.category === selectedCategory
+                  )
+                  .slice(0, 4);
 
     return (
         <section className="container my-5">
@@ -27,7 +35,7 @@ function FeaturedProducts() {
             </div>
 
             <div className="row">
-                {products.map((product) => (
+                {filteredProducts.map((product) => (
                     <div className="col-lg-3 col-md-6 mb-4" key={product.id}>
                         <ProductCart product={product} />
                     </div>

@@ -1,8 +1,42 @@
-.card{
-    transition: all .3s ease;
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .product-card .btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .navbar-brand img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar-brand span {
+    font-size: 1.5rem !important;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
-.card:hover{
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
     transform: translateY(-8px);
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
 }

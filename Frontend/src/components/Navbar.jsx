@@ -1,4 +1,5 @@
 import { Link, useNavigate , useLocation} from "react-router-dom";
+import logo from "../assets/logo.png";
 function Navbar({search, setSearch}){
     const navigate = useNavigate();
     const location= useLocation();
@@ -15,9 +16,12 @@ function Navbar({search, setSearch}){
     return(
         <nav className="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
             <div className="container">
-                <Link className="navbar-brand fw-bold fs-3 text-primary" to="/">
-                  NovaCart
-                </Link>
+             <Link className="navbar-brand d-flex align-items-center" to="/">
+                 <img src={logo} alt="NovaCart Logo" width="60" height="60" className="me-2"  />
+                   <span className="fw-bold text-primary fs-3">
+                      NovaCart
+                     </span>
+                </Link>  
                 <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target = "#navbarNav">
                     <span className="navbar-toggler-icon"></span>
                 </button>
