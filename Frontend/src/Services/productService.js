@@ -1,5 +1,5 @@
 import api from "./api";
-const API_URL = "http://localhost:8080/products";
+const API_URL = "https://ecommerce-major-project-production.up.railway.app/products";
 
 export const getAllProducts = () => {
     return api.get("/products");

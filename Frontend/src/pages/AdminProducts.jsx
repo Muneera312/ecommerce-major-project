@@ -54,7 +54,7 @@ function AdminProducts(){
                         <tr key={product.id}>
 
                             <td>
-                                <img src={`http://localhost:8080${product.imageUrl}`} width="60" alt={product.name} />
+                                <img src={`https://ecommerce-major-project-production.up.railway.app${product.imageUrl}`} width="60" alt={product.name} />
                             </td>
 
                             <td>{product.name}</td>

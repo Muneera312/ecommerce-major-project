@@ -43,7 +43,7 @@ function ProductDetails(){
 
             <div className="row ">
                 <div className="col-md-4">
-                    <img src= {`http://localhost:8080${product.imageUrl}`} className="img-fluid rounded shadow" alt={product.name} />
+                    <img src= {`https://ecommerce-major-project-production.up.railway.app${product.imageUrl}`} className="img-fluid rounded shadow" alt={product.name} />
                 </div>
                 <div className="col-md-7 my-4 mx-4">
                     <h2>{product.name}</h2>

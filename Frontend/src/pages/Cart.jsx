@@ -65,7 +65,7 @@ function Cart() {
                                  <div className="row align-items-center">
 
                                     <div className="col-md-3 text-center">
-                                       <img src={`http://localhost:8080${item.product.imageUrl}`} alt={item.product.name} className="img-fluid" style={{ maxHeight: "180px", objectFit: "contain" }}/>
+                                       <img src={`https://ecommerce-major-project-production.up.railway.app${item.product.imageUrl}`} alt={item.product.name} className="img-fluid" style={{ maxHeight: "180px", objectFit: "contain" }}/>
                                     </div>
                                      <div className="col-md-5">
                                          <h4>{item.product.name}</h4>
