@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ProductCart from "./productCart";
 import { getAllProducts } from "../Services/productService";
 
-function FeaturedProducts() {
+function FeaturedProducts({selectedCategory }) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
