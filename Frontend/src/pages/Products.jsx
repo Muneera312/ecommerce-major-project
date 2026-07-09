@@ -22,7 +22,7 @@ function Products({search}){
 
     return(
         <div className="container mt-4">
-            <div className="row">
+            <div className="row g-4">
                 {filteredProducts.map(product =>(
                     <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={product.id}>
                          <ProductCart product ={product} />

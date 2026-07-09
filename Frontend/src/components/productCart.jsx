@@ -20,7 +20,7 @@ function ProductCart({product}){
         });
 };
     return (
-        <div className="card product-card h-100 shadow-sm border-0 rounded-4" style={{width: "18rem"}}>
+        <div className="card product-card h-100 shadow-sm border-0 rounded-4" >
             <Link to={`/products/${product.id}`} className="text-decoration-none">
               <img src= {`https://ecommerce-major-project-production.up.railway.app${product.imageUrl}`} className="card-img-top" style={{ height: "220px", objectFit: "contain", padding: "15px"}} alt={product.name}/>
             </Link>  
