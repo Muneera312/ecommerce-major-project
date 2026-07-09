@@ -2,6 +2,12 @@
 
 A full-stack e-commerce web application built using React JS, Spring Boot, Spring Security, JWT Authentication, MySQL, and Razorpay.
 
+## 🚀 Live Demo
+
+**Frontend:** https://novacart-ten.vercel.app/
+
+**Backend API:**https://ecommerce-major-project-production.up.railway.app/products
+
 ## 🚀 Technologies Used
 
 ### Frontend
@@ -26,14 +32,30 @@ A full-stack e-commerce web application built using React JS, Spring Boot, Sprin
 
 ## ✨ Features
 
-- User Registration
-- User Login with JWT Authentication
-- Product Listing
-- Product Categories
+## User Features
+- User Registration & Login
+- JWT Authentication
+- Browse Products
+- Product Search
+- Category Filtering
+- Product Details
 - Shopping Cart
-- Online Payment using Razorpay
+- Secure Online Payments with Razorpay
 - Order Placement
-- My Orders Page
+- My Orders
+
+## Admin Features
+- Admin Dashboard
+- Add Products
+- Edit Products
+- Delete Products
+- View Customer Orders
+
+## 🌐 Deployment
+
+- Frontend: Vercel
+- Backend: Railway
+- Database: MySQL (Railway)
 
 ## ⚙️ How to Run
 
