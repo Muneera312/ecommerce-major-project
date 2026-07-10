@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {Link, useParams } from "react-router-dom";
+import {Link, useParams , useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getProductById } from "../Services/productService";
 import Footer from "../components/Footer";
@@ -36,6 +36,23 @@ function ProductDetails(){
             </div>
         );
     }
+    const navigate = useNavigate();
+
+const handleBuyNow = async () => {
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) {
+        alert("Please login first.");
+        return;
+    }
+
+    try {
+        await addToCart(userId, product.id, 1);
+        navigate("/cart"); // or "/checkout" if that's your flow
+    } catch (error) {
+        console.error(error);
+    }
+};
     return(
         <>
        
@@ -66,7 +83,7 @@ function ProductDetails(){
                     </div>
                     <div className="d-flex gap-3">
                     <button className="btn btn-warning" onClick={handleAddToCart}>Add to Cart</button>
-                    <Link to="/cart" className="btn btn-primary">Buy Now</Link>
+                    <Link onClick={handleBuyNow} className="btn btn-primary">Buy Now</Link>
                     </div>
                     <div className="mt-4 fw-bold">
                        <p>🚚 Free Delivery</p>
