@@ -34,7 +34,7 @@ function ProductCart({product}){
                  <p>⭐ {product.rating}</p>
                  <div className="d-flex gap-2 mt-auto">
                 <button className="btn btn-warning" onClick={handleAddToCart}> Add to Cart </button> 
-                <Link to="/cartItem" className="btn btn-primary  ">Buy now</Link>
+                <Link to="/checkout" className="btn btn-primary  ">Buy now</Link>
                 </div>
                 </div>
         </div>
