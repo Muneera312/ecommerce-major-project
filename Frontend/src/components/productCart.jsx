@@ -1,5 +1,5 @@
 
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { addToCart } from "../Services/cartService";
 function ProductCart({product}){
     
@@ -19,6 +19,23 @@ function ProductCart({product}){
             console.error(error);
         });
 };
+    const navigate = useNavigate();
+
+const handleBuyNow = async () => {
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) {
+        alert("Please login first.");
+        return;
+    }
+
+    try {
+        await addToCart(userId, product.id, 1);
+        navigate("/cart"); // or "/checkout" if that's your flow
+    } catch (error) {
+        console.error(error);
+    }
+};
     return (
         <div className="card product-card h-100 shadow-sm border-0 rounded-4" >
             <Link to={`/products/${product.id}`} className="text-decoration-none">
@@ -34,7 +51,7 @@ function ProductCart({product}){
                  <p>⭐ {product.rating}</p>
                  <div className="d-flex gap-2 mt-auto">
                 <button className="btn btn-warning" onClick={handleAddToCart}> Add to Cart </button> 
-                <Link onClick={handleAddToCart} className="btn btn-primary  ">Buy now</Link>
+                <Link onClick={handleBuyNow} className="btn btn-primary  ">Buy now</Link>
                 </div>
                 </div>
         </div>
